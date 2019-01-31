@@ -1,7 +1,13 @@
 <p>
   <clr-icon shape="airplane"></clr-icon>
+  <span> Star ships: </span>
+
+  <span class="spinner spinner-inline" *ngIf="loading">
+      Loading...
+  </span>
 </p>
 
+<hr/>
 <ul class="list">
     <li *ngFor="let ship of ships$ | async">
       <span>{{ship.name}}</span>

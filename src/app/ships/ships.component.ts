@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Ship } from './ships.model';
 import { ShipsService } from './ships.service';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-ships',
@@ -11,9 +12,11 @@ import { ShipsService } from './ships.service';
 export class ShipsComponent implements OnInit {
 
   ships$: Observable<Ship[]>;
+  loading: Boolean = false;
   constructor(private svc: ShipsService) {
 
-    this.ships$ = this.svc.getShips();
+    this.loading = true;
+    this.ships$ = this.svc.getShips().pipe( finalize( () => this.loading = false));
 
   }
 

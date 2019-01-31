@@ -1,6 +1,12 @@
 <p>
-  People:
+  <clr-icon shape="user"></clr-icon>
+  <span> People: </span>
+  <span class="spinner spinner-inline" *ngIf="loading">
+      Loading...
+  </span>
 </p>
+
+<hr/>
 
 <ul class="list">
     <li *ngFor="let person of people$ | async">
