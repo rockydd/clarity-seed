@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { People } from './people.model';
+import { Ships } from './ships.model';
 import { map } from 'rxjs/operators';
-const PEOPLE_URL = 'https:/swapi.co/api/people';
+const SHIPS_URL = 'https:/swapi.co/api/starships';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PeopleService {
+export class ShipsService {
 
   constructor(private http: HttpClient) { }
 
-  getPeople() {
-    return this.http.get<People>(PEOPLE_URL).pipe(map(people => people.results));
+  getShips() {
+    return this.http.get<Ships>(SHIPS_URL).pipe(map(ships => ships.results));
   }
 }

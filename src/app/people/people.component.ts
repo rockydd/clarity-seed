@@ -10,9 +10,9 @@ import { Person } from './people.model';
 })
 export class PeopleComponent implements OnInit {
 
-  people: Observable<Person[]>;
+  people$: Observable<Person[]>;
   constructor(private ps: PeopleService) {
-    this.people = this.ps.getPeople();
+    this.people$ = this.ps.getPeople();
   }
 
   ngOnInit() {

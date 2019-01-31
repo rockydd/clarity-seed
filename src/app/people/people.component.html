@@ -3,7 +3,7 @@
 </p>
 
 <ul class="list">
-    <li *ngFor="let person of people | async">
+    <li *ngFor="let person of people$ | async">
       <span>{{person.name}}</span>
     </li>
 </ul>

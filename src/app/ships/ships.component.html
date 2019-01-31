@@ -1,3 +1,9 @@
 <p>
-  ships works!
+  <clr-icon shape="airplane"></clr-icon>
 </p>
+
+<ul class="list">
+    <li *ngFor="let ship of ships$ | async">
+      <span>{{ship.name}}</span>
+    </li>
+</ul>
