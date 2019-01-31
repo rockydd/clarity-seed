@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PeopleComponent } from './people/people.component';
+import { ShipsComponent } from './ships/ships.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PeopleComponent
+    PeopleComponent,
+    ShipsComponent
   ],
   imports: [
     BrowserModule,
